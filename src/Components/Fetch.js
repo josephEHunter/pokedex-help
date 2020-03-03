@@ -78,7 +78,6 @@ for(let i= 0; i<this.state.pokemonData.length; i++){
         </div>
         <h1 className="red">pokemon version: {this.state.game}</h1>
         <h2>Route: {this.state.location}</h2>
-        <button onClick={this.consoleTest}>test</button>
 
 
       </div>
