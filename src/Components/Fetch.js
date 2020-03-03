@@ -76,8 +76,8 @@ for(let i= 0; i<this.state.pokemonData.length; i++){
         <div>
           <button onClick={this.executeFetch}>Submit</button>
         </div>
-        <h1 className="red">"DOM" coming soon</h1>
-        <p>please follow instructions on about page or on the HOWTOUSE file</p>
+        <h1 className="red">pokemon version: {this.state.game}</h1>
+        <h2>Route: {this.state.location}</h2>
         <button onClick={this.consoleTest}>test</button>
 
 
