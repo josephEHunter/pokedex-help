@@ -1,26 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import './App.css';
+import About from './Components/About'
+import Home from './Components/Home'
+import SpecialThanks from './Components/SpecialThanks'
+import {BrowserRouter as Router,
+        Switch,
+        Route,
+        Link
+      } from "react-router-dom"
+
+
+class App extends React.Component {
+  constructor(){
+    super()
+
+
+    this.consoleTest = this.consoleTest.bind(this)
+
+  }
+
+  consoleTest(){
+    console.log(this.employees)
+  }
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+    <div className="routes">
+      <nav>
+        <ul>
+
+          <li>
+          <Link to ="/Home">Home </Link>
+          </li>
+
+
+          <li>
+          <Link to ="/About">About </Link>
+          </li>
+
+
+          <li>
+          <Link to ="/SpecialThanks"> SpecialThanks </Link>
+          </li>
+
+
+        </ul>
+      </nav>
+
+    <Switch>
+
+
+    <Route exact path="/Home" component={Home}/>
+
+    <Route path="/About" component={About}/>
+
+    <Route path="/SpecialThanks" component={SpecialThanks}/>
+
+    </Switch>
+
+      </div>
+
+  </Router>
   );
 }
-
+}
 export default App;
