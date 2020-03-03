@@ -8,7 +8,7 @@ class ContextProvider extends React.Component {
     super()
     this.state={
       pokemonData: [],
-      game: "",
+      game: [],
       location:"",
       isloaded: false,
     }
@@ -59,6 +59,7 @@ for(let i= 0; i<this.state.pokemonData.length; i++){
 
 
   render(){
+    const{ isloaded, pokemonData, poke, game} = this.state;
   if (this.state.isloaded === false){
   return (
     <div>
@@ -75,9 +76,13 @@ for(let i= 0; i<this.state.pokemonData.length; i++){
       <div>
         <div>
           <button onClick={this.executeFetch}>Submit</button>
+          <h1>{this.props.value}</h1>
+
         </div>
         <h1 className="red">pokemon version: {this.state.game}</h1>
         <h2>Route: {this.state.location}</h2>
+        <button onClick={this.consoleTest}>test</button>
+
 
 
       </div>
